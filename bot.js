@@ -2,7 +2,7 @@ console.log('I launched you fucking dumbass, what now?')
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
-client.login("ODUxNTU4NTAwNzU1OTYzOTY2.YL6Bpw.xyYRVS8cXxZZmE1PtymcQgDaf5c");
+client.login("put your token here or it wont work");
 
 client.on('ready', readyDiscord);
 
