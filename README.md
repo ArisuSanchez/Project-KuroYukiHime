@@ -1,10 +1,10 @@
 # Discord-Bot-Aniorb
-my personal discord bot to notify people when certain animes are released, with links to a website that i work with
+Discord Bot that allows to search animes within **[aniorb](https://aniorb.me/)** an anime website :P.
 
+# Current features 
 
+[+] Search Animes
 
-
-# current features 
-
-Literally none, i am currently using js and discord.js to figure out how to use rss feeds without killing my network
-
+# To Do 
+ [-] Make a notification system through RSS ( planned ) <br>
+ [-] More Commands
