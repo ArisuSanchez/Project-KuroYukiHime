@@ -1,5 +1,5 @@
 # Discord-Bot-Aniorb
-Discord Bot that allows to search animes within **[aniorb](https://aniorb.me/)** an anime website :P.
+Discord Bot that allows to search animes within **[aniorb](https://aniorb.me/)** an anime website 
 
 # Current features 
 
