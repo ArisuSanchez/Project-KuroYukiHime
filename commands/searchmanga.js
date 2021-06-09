@@ -9,7 +9,7 @@ exports.execute = async (client, message, args) => {
     embed.setDescription(`**[Click Here To View Your Manga Search Results](${url})**`)
     embed.setTimestamp()
     embed.setFooter(`Made by 0_0#6666 and Arisu#0404`)
-    embed.thumbnail('https://onii-chan.life-is-pa.in/7YFbVi.png')
+    embed.setThumbnail('https://onii-chan.life-is-pa.in/7YFbVi.png')
     message.channel.send(`Please Check Your Direct Messages For The Search Results!`)
     message.author.send(embed)
   
