@@ -13,7 +13,7 @@ fs.readdir("./events/", (err, files) => {
         let eventName = f.split(".")[0];
         client.on(eventName, event.bind(null, client));
     });
-}); // that is a simple event handler, now we are organized 👀
+}); // that is a simple event handler, now we are organized 👀-0
 
 fs.readdir("./commands/", (err, files) => {
     if (err) return console.error(err);
@@ -25,5 +25,6 @@ fs.readdir("./commands/", (err, files) => {
             client.aliases.set(alias, command.help.name);
         });
     });
-}); // simple command handler MoRe ORgAnIzEd 👀
+}); // simple command handler MoRe ORgAnIzEd 👀-0
 client.login(client.config.token);
+//i feel like im getting assulted for not knowing what the hell im doing -Au
