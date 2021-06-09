@@ -1,4 +1,4 @@
 module.exports = {
-    token: "GodDamnit token goes here",
+    token: "",
     prefix: "!",
 }
