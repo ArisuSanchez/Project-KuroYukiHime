@@ -6,7 +6,7 @@ exports.execute = async (client, message, args) => {
     const url = `${baseurl}` + `${dentifier}`;
     embed.setTitle(`🔎 Search Results For Manga, ${args.slice().join(' ')}`)
     embed.setColor('RANDOM')
-    embed.setDescription(`**[Here Is What You Wanted](${url})**`)
+    embed.setDescription(`**[Click Here To View Your Manga Search Results](${url})**`)
     embed.setTimestamp()
     embed.setFooter(`Made by 0_0#6666 and Arisu#0404`)
     message.channel.send(`Please Check Your Direct Messages For The Search Results!`)
