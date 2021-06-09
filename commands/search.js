@@ -10,7 +10,7 @@ exports.execute = async (client, message, args) => {
     embed.setTimestamp()
     embed.setThumbnail('https://onii-chan.life-is-pa.in/7YFbVi.png')
     embed.setFooter(`Made by 0_0#6666 and Arisu#0404`)
-    message.channel.send(`Please Check Your Direct Messages For The Search Results!`)
+    message.channel.send(`Please Check Your Direct Messages For The Search Results!📫`)
     message.author.send(embed)
   
 };
