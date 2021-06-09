@@ -8,8 +8,8 @@ exports.execute = async (client, message, args) => {
     embed.setColor('RANDOM')
     embed.setDescription(`**[Here Is What You Wanted](${url})**`)
     embed.setTimestamp()
-    embed.setFooter(`Made With ❤ by 0_0#6666`)
-    message.channel.send(`💌 Please Check Our Direct Messages!`)
+    embed.setFooter(`Made by 0_0#6666 and Arisu#0404`)
+    message.channel.send(`Please Check Your Direct Messages For The Search Results!`)
     message.author.send(embed)
   
 };
