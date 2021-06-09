@@ -17,8 +17,8 @@ exports.execute = async (client, message, args) => {
          channel = collected.first().mentions.channels.first()
         });
       await message.channel.send(
-        "What would be the reason for the dowtime?"
-      );
+        "What would be the reason for the downtime?" 
+        );
       await message.channel
         .awaitMessages(m => m.author.id === message.author.id, {
           max: 1,
