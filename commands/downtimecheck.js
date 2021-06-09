@@ -1,5 +1,5 @@
 exports.execute = async (client, message, args) => {
-    message.channel.reply(`Here Is The link to check for downtime https://www.arisubot.me/bot-status`)
+    message.channel.send (`Here Is The link to Check For Downtime https://www.arisubot.me/bot-status`)
 };
 exports.help = {
     name: "downtime",
