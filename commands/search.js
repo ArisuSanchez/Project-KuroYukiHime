@@ -6,7 +6,7 @@ exports.execute = async (client, message, args) => {
     const url = `${baseurl}` + `${dentifier}` + `/1`;
     embed.setTitle(`🔎 Search Results For ${args.slice().join(' ')}`)
     embed.setColor('RANDOM')
-    embed.setDescription(`**[Click Here To View The Anime On Site!](${url})**`)
+    embed.setDescription(`**[Here Is What You Wanted](${url})**`)
     embed.setTimestamp()
     embed.setFooter(`Made With ❤ by 0_0#6666`)
     message.channel.send(`💌 Please Check Our Direct Messages!`)
