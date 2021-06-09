@@ -6,3 +6,4 @@ exports.help = {
     name: "comick",
     aliases: ['c']
   };
+  //need to replace with mangadex api and see what happens ~a

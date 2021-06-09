@@ -4,7 +4,7 @@ exports.execute = async (client, message, args) => {
     const dentifier = args.slice().join('%20')
     const embed = new MessageEmbed()
     const url = `${baseurl}` + `${dentifier}`;
-    embed.setTitle(`🔎 Search Results For Manga ${args.slice().join(' ')}`)
+    embed.setTitle(`🔎 Search Results For Manga, ${args.slice().join(' ')}`)
     embed.setColor('RANDOM')
     embed.setDescription(`**[Here Is What You Wanted](${url})**`)
     embed.setTimestamp()

@@ -6,3 +6,4 @@ exports.help = {
     name: "aniorb",
     aliases: ['a']
   };
+  //ugh a cert expired for a website and now we are doomed -s
