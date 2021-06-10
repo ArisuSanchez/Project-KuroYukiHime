@@ -12,10 +12,18 @@ Soon to have Features such as Anime release notifiers, and More commands for fun
 # Current features 
 
 [+] Search Animes
+
 [+] Search Mangas
-[+] Search My Anime List (simple search, planned to expand)
+
+[+] Search My Anime List
 
 # To Do 
  [-] Make a notification system through RSS ( planned ) <br>
  [-] More Commands
  [-] Better MyAnimeList Search
+ 
+ # For Client Side Installation
+
+requires, discord.js, and mal-scraper
+
+then just use node index.js with your own token, in powershell
