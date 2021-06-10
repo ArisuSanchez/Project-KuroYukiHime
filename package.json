@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.3",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "mal-scraper": "^2.11.3"
   }
 }
