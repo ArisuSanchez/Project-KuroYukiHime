@@ -11,6 +11,7 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "fs": "0.0.1-security",
-    "mal-scraper": "^2.11.3"
+    "mal-scraper": "^2.11.3",
+    "rss-feed-emitter": "^3.2.2"
   }
 }

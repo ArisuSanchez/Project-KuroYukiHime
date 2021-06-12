@@ -5,6 +5,25 @@ client.config = require("./config");
 client.commands = new Collection();
 client.aliases = new Collection();
 client.prefix = client.config.prefix
+//  RSS  - Future
+const RssFeedEmitter = require('rss-feed-emitter');
+const feeder = new RssFeedEmitter({ skipFirstLoad: true });
+
+feeder.add({
+    url: '',
+    refresh: 30000,
+});
+
+feeder.on('new-item', function (item) {
+    client.guilds.forEach(g => 
+        g.channels.cache.get(c => c.name == 'feeds').send(item))
+})
+
+feeder.on('error', function (error) {
+    _channel.botLog('Feed Error', error);
+});
+// END
+
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
     files.forEach(f => {
