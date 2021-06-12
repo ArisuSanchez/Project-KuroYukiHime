@@ -19,7 +19,7 @@ search.search(type, {
     let manga = new MessageEmbed()
     const desc = mangadata[0].shortDescription.replace("...read more",`...\n**[Read More](${mangadata[0].url})**`)
     manga.setTitle(mangadata[0].title)
-	  manga.setDescription(`${desc}\n\n **[Read This Manga For FREE over at our partner Comick™](${url})**`)
+	  manga.setDescription(`${desc}\n\n **[Read This Manga On Comick](${url})**`)
 	  manga.setThumbnail(mangadata[0].thumbnail)
 	  manga.setURL(mangadata[0].url)
 	  manga.setColor("RANDOM")
