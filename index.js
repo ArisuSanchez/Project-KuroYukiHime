@@ -10,7 +10,7 @@ const RssFeedEmitter = require('rss-feed-emitter');
 const feeder = new RssFeedEmitter({ skipFirstLoad: true });
 
 feeder.add({
-    url: '',
+    url: 'https://example/com/rss',
     refresh: 30000,
 });
 
@@ -20,7 +20,6 @@ feeder.on('new-item', function (item) {
 })
 
 feeder.on('error', function (error) {
-    _channel.botLog('Feed Error', error);
 });
 // END
 
