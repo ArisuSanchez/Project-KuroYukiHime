@@ -59,7 +59,7 @@ feeder.on('anime', async function (item) {
   let title = decode( item.title , {level: 'xml'});
   let permaLink = item.guid
   let baseurl = 'https://aniorb.me/search/'
-  let stuff = item.title.replace(/[^a-zA-Z0-9]/g, '');
+  let stuff = item.title.replace(/[^a-zA-Z0-9]/g, ' ');
   const dentifier = stuff.replace(' ','%20')
   const url = `${baseurl}` + `${dentifier}` + "/1";
   let thumbnail = item.image.url
@@ -75,7 +75,7 @@ feeder.on('anime', async function (item) {
                 .setTitle(title)
                 .setURL(permaLink)
                 if(validURL(url)) {
-                  embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!\n\n Make Sure To Check It Out On **[Aniorb**](${url})**`)
+                  embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!\n\n Make Sure To Check It Out On **[Aniorb](${url})**`)
                 } else {
                   embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!`)
                 }
