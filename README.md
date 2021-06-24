@@ -11,16 +11,20 @@ Soon to have Features such as Anime release notifiers, and More commands for fun
 
 # Current features 
 
-[+] Search Animes
+-  Search Animes
 
-[+] Search Mangas
+- Search Mangas
 
-[+] Search My Anime List
+-  Search My Anime List
+
+-  Anime news updates must have a channel named **`feeds`** in your discord guild.
+
+ ## __Featured__: Anime Episodes Updates 
+ ### - Follows all the animes being aired right now.
+ ### - Must have a channel named `animes` in your discord guild.
 
 # To Do 
- [-] Make a notification system through RSS ( planned ) <br>
- [-] More Commands
- [-] Better MyAnimeList Search
+- More Commands
  
  # For Client Side Installation
 
