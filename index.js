@@ -7,7 +7,8 @@ client.config = require("./config");
 client.commands = new Collection();
 client.aliases = new Collection();
 client.prefix = client.config.prefix
-//  RSS  Feeds 
+
+//  RSS  - Fully Implimented Notifier
 const RssFeedEmitter = require('rss-feed-emitter');
 const feeder = new RssFeedEmitter({ skipFirstLoad: false });
 
@@ -22,9 +23,9 @@ feeder.add({
   eventName: 'anime'
 })
 
-feeder.on('news', async function (item) { // news feeds 
+feeder.on('news', async function (item) {
   let title = decode( item['rss:title']['#'] , {level: 'xml'});
-  let permaLink = item['rss:link']['#'].replace('?_location=rss','/')
+  let permaLink = item['rss:link']['#']
   let description = decode( item['rss:description']['#'] , {level: 'xml'}).replace('...',`**[...Read More](${permaLink})**`)
   let thumbnail = item['media:thumbnail']['#']
   try {
@@ -54,13 +55,13 @@ feeder.on('news', async function (item) { // news feeds
     console.log(err);
   }
 })
-feeder.on('anime', async function (item) { // anime feeds
+feeder.on('anime', async function (item) {
   let title = decode( item.title , {level: 'xml'});
   let permaLink = item.guid
-  let baseurl = 'https://aniorb.me/search'
-  const dentifier = item.title.replace(' ','%20')
+  let baseurl = 'https://aniorb.me/search/'
+  let stuff = item.title.replace(/[^a-zA-Z0-9]/g, '');
+  const dentifier = stuff.replace(' ','%20')
   const url = `${baseurl}` + `${dentifier}` + "/1";
-  let description = `**New Episode** of [**__${title}__**](${permaLink}) has aired!\n\n Make Sure To Check It Out On [**Aniorb**](${url})`
   let thumbnail = item.image.url
   try {
     client.guilds.cache.map((guild) => {
@@ -73,9 +74,13 @@ feeder.on('anime', async function (item) { // anime feeds
                 let embed = new MessageEmbed()
                 .setTitle(title)
                 .setURL(permaLink)
-                .setDescription(description)
-                .setThumbnail(thumbnail)
-                .setTimestamp()
+                if(validURL(url)) {
+                  embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!\n\n Make Sure To Check It Out On **[Aniorb**](${url})**`)
+                } else {
+                  embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!`)
+                }
+                embed.setThumbnail(thumbnail)
+                embed.setTimestamp()
                 c.send(embed);
                 found = 1
               }
@@ -116,4 +121,15 @@ fs.readdir("./commands/", (err, files) => {
     });
 }); // simple command handler MoRe ORgAnIzEd 👀-0
 client.login(client.config.token);
+
+// url test function - thanks stackoverflow
+function validURL(str) {
+  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  return !!pattern.test(str);
+}
 //i feel like im getting assulted for not knowing what the hell im doing -Au
