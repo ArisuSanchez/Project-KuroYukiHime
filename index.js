@@ -5,18 +5,36 @@ client.config = require("./config");
 client.commands = new Collection();
 client.aliases = new Collection();
 client.prefix = client.config.prefix
-//  RSS  - Future
+//  RSS  - Future ( news atm )
 const RssFeedEmitter = require('rss-feed-emitter');
 const feeder = new RssFeedEmitter({ skipFirstLoad: true });
 
 feeder.add({
-    url: 'https://example/com/rss',
+    url: 'https://myanimelist.net/rss/news.xml',
     refresh: 30000,
-});
+})
 
 feeder.on('new-item', function (item) {
-    client.guilds.forEach(g => 
-        g.channels.cache.get(c => c.name == 'feeds').send(item))
+  try {
+    client.guilds.cache.map((guild) => {
+      guild.channels.cache.map((c) => {
+          let found = 0
+        if (found === 0) {
+          if (c.name === "feeds") {
+            if (c.permissionsFor(client.user).has("VIEW_CHANNEL") === true) {
+              if (c.permissionsFor(client.user).has("SEND_MESSAGES") === true) {
+                c.send(`${item.title}\n ${item.description}`);
+                found = 1
+              }
+            }
+          }
+        }
+      });
+    });
+  }
+  catch (err) {
+    console.log(err);
+  }
 })
 
 feeder.on('error', function (error) {
