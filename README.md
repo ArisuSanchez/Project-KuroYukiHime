@@ -28,6 +28,14 @@ Soon to have Features such as Anime release notifiers, and More commands for fun
  
  # For Client Side Installation
 
-requires, discord.js, and mal-scraper
+ ## Dependencies 
+ - { Client , Collection , MessageEmbed } discord.js 
+ - mal-scraper
+ - rss-feed-emitter
+ - { decode } -  html-entities
 
-then just use node index.js with your own token, in powershell
+## Post installation run 
+```sh <br> 
+node index.js
+``` 
+In powershell.
