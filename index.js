@@ -58,7 +58,7 @@ feeder.on('anime', async function (item) {
   let title = decode( item.title , {level: 'xml'});
   let permaLink = item.guid
   let baseurl = 'https://aniorb.me/recentlyadded/1'
-  //let stuff = item.title.replace(/[^a-zA-Z0-9]/g, ' '); i commented this all to make sure stuff is good, need to add config.js to gitignore-au
+  let stuff = item.title.replace(/[^a-zA-Z0-9]/g, ' ');
   //const dentifier = stuff.replace(' ','%20')
  // const url = `${baseurl}` + `${dentifier}` + "/1";
   let thumbnail = item.image.url
