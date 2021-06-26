@@ -59,8 +59,8 @@ feeder.on('anime', async function (item) {
   let permaLink = item.guid
   let baseurl = 'https://aniorb.me/recentlyadded/1'
   let stuff = item.title.replace(/[^a-zA-Z0-9]/g, ' ');
-  //const dentifier = stuff.replace(' ','%20')
- // const url = `${baseurl}` + `${dentifier}` + "/1";
+  const dentifier = stuff.replace(' ','')
+  const url = `${baseurl}` + `` + "";
   let thumbnail = item.image.url
   try {
     client.guilds.cache.map((guild) => {
