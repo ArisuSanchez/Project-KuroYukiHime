@@ -57,10 +57,10 @@ feeder.on('news', async function (item) {
 feeder.on('anime', async function (item) {
   let title = decode( item.title , {level: 'xml'});
   let permaLink = item.guid
-  let baseurl = 'https://aniorb.me/search/'
-  let stuff = item.title.replace(/[^a-zA-Z0-9]/g, ' ');
-  const dentifier = stuff.replace(' ','%20')
-  const url = `${baseurl}` + `${dentifier}` + "/1";
+  let baseurl = 'https://aniorb.me/recentlyadded/1'
+  //let stuff = item.title.replace(/[^a-zA-Z0-9]/g, ' '); i commented this all to make sure stuff is good, need to add config.js to gitignore-au
+  //const dentifier = stuff.replace(' ','%20')
+ // const url = `${baseurl}` + `${dentifier}` + "/1";
   let thumbnail = item.image.url
   try {
     client.guilds.cache.map((guild) => {
@@ -122,13 +122,7 @@ fs.readdir("./commands/", (err, files) => {
 client.login(client.config.token);
 
 // url test function - thanks stackoverflow
-function validURL(str) {
-  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-  return !!pattern.test(str);
-}
+//removed
 //i feel like im getting assulted for not knowing what the hell im doing -Au
+
+//**holy fuck i deleted that shit but whatever, ill get this shit setup i hope -au*/
