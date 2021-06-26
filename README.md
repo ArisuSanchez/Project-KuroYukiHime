@@ -34,6 +34,10 @@ Soon to have Features such as Anime release notifiers, and More commands for fun
  - rss-feed-emitter
  - { decode } -  html-entities
 
+#Forking Instructions
+
+literally label it something other then our project, please
+
 ## Post installation run 
 ```sh <br> 
 node index.js
