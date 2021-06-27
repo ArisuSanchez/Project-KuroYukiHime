@@ -76,8 +76,10 @@ feeder.on('anime', async function (item) {
                   embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!\n\n Make Sure To Check It Out On **[Aniorb](${url})**`)
                 embed.setThumbnail(thumbnail)
                 embed.setTimestamp()
+                embed.setFooter('*If Anime Is Not In Recently Added, Try Searching For it in the search bar*')
                 c.send(embed);
                 found = 1
+
               }
             }
           }
