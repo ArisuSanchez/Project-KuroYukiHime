@@ -76,7 +76,7 @@ feeder.on('anime', async function (item) {
                   embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!\n\n Make Sure To Check It Out On **[Aniorb](${url})**`)
                 embed.setThumbnail(thumbnail)
                 embed.setTimestamp()
-                embed.setFooter('*If Anime Is Not In Recently Added, Try Searching For it in the search bar*')
+                embed.setFooter('*If Anime Is Not In Recently Added, Wait One Hour Before Its On Aniorb Servers*')//soon to be patched i hope, really annoying tbf
                 c.send(embed);
                 found = 1
 
