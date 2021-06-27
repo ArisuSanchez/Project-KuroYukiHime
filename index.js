@@ -58,9 +58,9 @@ feeder.on('anime', async function (item) {
   let title = decode( item.title , {level: 'xml'});
   let permaLink = item.guid
   let baseurl = 'https://aniorb.me/recentlyadded/1'
-  let stuff = item.title.replace(/[^a-zA-Z0-9]/g, ' ');
-  const dentifier = stuff.replace(' ','')
-  const url = `${baseurl}` + `` + "";
+  //let stuff = item.title.replace('');
+  //const dentifier = stuff.replace(' ','')
+  const url = `${baseurl}`;
   let thumbnail = item.image.url
   try {
     client.guilds.cache.map((guild) => {
@@ -73,11 +73,7 @@ feeder.on('anime', async function (item) {
                 let embed = new MessageEmbed()
                 .setTitle(title)
                 .setURL(permaLink)
-                if(validURL(url)) {
                   embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!\n\n Make Sure To Check It Out On **[Aniorb](${url})**`)
-                } else {
-                  embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!`)
-                }
                 embed.setThumbnail(thumbnail)
                 embed.setTimestamp()
                 c.send(embed);
