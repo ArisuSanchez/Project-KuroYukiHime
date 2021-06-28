@@ -10,7 +10,7 @@ exports.execute = async (client, message, args) => {
               .addField('!setchannel feeds [channel]', 'Set a channel where new anime related news would be posted 📰')
           message.channel.send('**`!setchannel` Command**', embed)
       } else if (args[0] === 'animes') {
-          let channel = message.channel
+          let channel = message.mentions.channels.first()
           if (!channel) {
               return message.channel.send("Please mention a valid channel where bot has `SEND MESSAGES`, `EMBED LINKS` and `VIEW CHANNEL` Permissions")
           }
