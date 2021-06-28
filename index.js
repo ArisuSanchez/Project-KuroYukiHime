@@ -42,7 +42,7 @@ feeder.on('news', async function(item) {
   let thumbnail = item['media:thumbnail']['#']
   try {
       client.guilds.cache.map((guild) => {
-          db.get(`news_${guild.id}`).then(chx => {
+          db.get(`news_${guild.id}`).then (chx => {
               if (chx === null) {
                   return;
               }
@@ -72,7 +72,7 @@ feeder.on('anime', async function(item) {
   let thumbnail = item.image.url
   try {
       client.guilds.cache.map((guild) => {
-          db.get(`animes_${guild.id}`).then(chx => {
+          db.get(`animes_${guild.id}`).then (chx => {
               if (chx === null) {
                   return;
               }
