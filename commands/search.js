@@ -7,7 +7,7 @@ exports.execute = async (client, message, args) => {
     return message.channel.send(`Please provide a search query~~!`)
   }
   const type = 'anime'
-  let baseurl = 'https://aniorb.me/search'
+  let baseurl = 'https://aniorb.me/search/'
   const dentifier = args.slice().join('%20')
   const url = `${baseurl}` + `${dentifier}` + "/1";
   const msg = await message.channel.send(`**🔍 Searching for your anime**`)
