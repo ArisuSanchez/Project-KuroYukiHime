@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "html-entities": "^2.3.2",
-    "mal-scraper": "^2.11.3",
-    "rss-feed-emitter": "^3.2.2"
-  }
-}
