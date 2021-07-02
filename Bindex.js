@@ -42,9 +42,9 @@ feeder.on('news', async function(item) {
   let thumbnail = item['media:thumbnail']['#']
   try {
       client.guilds.cache.map((guild) => {
-          let chx = db.get(`news_${guild.id}`)
-              if (chx === null) {
-                  return;
+        let chx = db.get(`animes_${guild.id}`);
+        if (chx === null) {
+          return;
               }
               let c = guild.channels.cache.get(chx)
               if (c.permissionsFor(client.user).has("VIEW_CHANNEL") === true) {
@@ -58,11 +58,12 @@ feeder.on('news', async function(item) {
                       c.send(embed);
                   }
               }
-      })
-  } catch (err) {
+          })
+      }
+   catch (err) {
       console.log(err);
   }
-})
+
 feeder.on('anime', async function(item) {
   let title = decode(item.title, {
       level: 'xml'
@@ -71,11 +72,11 @@ feeder.on('anime', async function(item) {
   let thumbnail = item.image.url
   try {
       client.guilds.cache.map((guild) => {
-          let chy = db.get(`animes_${guild.id}`)
-              if (chy === null) {
+          db.get(`animes_${guild.id}`).then (chx => {
+              if (chx === null) {
                   return;
               }
-              let c = guild.channels.cache.get(chy)
+              let c = guild.channels.cache.get(chx)
               if (c.permissionsFor(client.user).has("VIEW_CHANNEL") === true) {
                   if (c.permissionsFor(client.user).has("SEND_MESSAGES") === true) {
                       let url = 'https://aniorb.me/recentlyadded/1'
@@ -89,6 +90,7 @@ feeder.on('anime', async function(item) {
                       c.send(embed);
                   }
               }
+          })
       });
   } catch (err) {
       console.log(err);
@@ -121,5 +123,4 @@ fs.readdir("./commands/", (err, files) => {
 }); // simple command handler MoRe ORgAnIzEd 👀-0
 client.login(client.config.token);
 //i feel like im getting assulted for not knowing what the hell im doing -Au
-//**holy fuck i deleted that shit but whatever, ill get this shit setup i hope -au*/
-
+//**holy fuck i deleted that shit but whatever, ill get this shit setup i hope -au*///////
