@@ -85,7 +85,7 @@ feeder.on('anime', async function(item) {
                       embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!\n\n Make Sure To Check It Out On **[Aniorb](${url})**`)
                       embed.setThumbnail(thumbnail)
                       embed.setTimestamp()
-                      embed.setFooter('If Anime Is Not In Recently Added, Wait One Hour Before Its On Aniorb Servers') //soon to be patched i hope, really annoying tbf
+                      embed.setFooter('If Anime Is Not In Recently Added, Wait Up to 24 hours before it is on aniorb servers') //soon to be patched i hope, really annoying tbf
                       c.send(embed);
                   }
               }
@@ -94,7 +94,7 @@ feeder.on('anime', async function(item) {
       console.log(err);
   }
 })
-
+//def need aniorb api so that when an anime releases we can be up to 100x more exact on when it is actually out
 feeder.on('error', function(error) {});
 // END
 
