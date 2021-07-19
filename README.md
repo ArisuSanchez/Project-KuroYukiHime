@@ -8,6 +8,7 @@ Soon to have Features such as Anime release notifiers, and More commands for fun
 3. !c or comick to check status of comick.fun
 4. !a or !aniorb to check status of aniorb
 5. !mal or myanimelist to search all of my anime list (simple search, planned for expansion)
+6. !r or reminder, creates a simple reminder h,m,s and reason
 
 # Current features 
 
