@@ -35,6 +35,8 @@ Soon to have features such as anime release notifiers, and more commands for fun
  - rss-feed-emitter
  - { decode } -  html-entities
  - quick.db
+ - feed-emitter
+ - better-sqlite3
 
 #Forking Instructions
 
