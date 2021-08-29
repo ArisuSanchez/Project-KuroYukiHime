@@ -71,21 +71,21 @@ feeder.on('anime', async function(item) {
   let thumbnail = item.image.url
   try {
       client.guilds.cache.map((guild) => {
-          let chy = db.get(`animes_${guild.id}`)
-              if (chy === null) {
+          let chx = db.get(`animes_${guild.id}`)
+              if (chx === null) {
                   return;
               }
-              let c = guild.channels.cache.get(chy)
+              let c = guild.channels.cache.get(chx)
               if (c.permissionsFor(client.user).has("VIEW_CHANNEL") === true) {
-                  if (c.permissionsFor(client.user).has("SEND_MESSAGES") === true) {
-                      let url = 'https://aniorb.me/recentlyadded/1'
+                  if (c.getpermissionsFor(client.user).has("SEND_MESSAGES") === true) {
+                      let url = 'https://animek.fun'
                       let embed = new MessageEmbed()
                           .setTitle(title)
                           .setURL(permaLink)
-                      embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!\n\n Make Sure To Check It Out On **[Aniorb](${url})**`)
+                      embed.setDescription(`**New Episode** of [**__${title}__**](${permaLink}) has aired!\n\n Make Sure To Check It Out On **[AnimeK](${url})**`)
                       embed.setThumbnail(thumbnail)
                       embed.setTimestamp()
-                      embed.setFooter('If Anime Is Not In Recently Added, Wait Up to 24 hours before it is on aniorb servers') //soon to be patched i hope, really annoying tbf
+                      //embed.setFooter('If Anime Is Not In Recently Added, Wait Up to 24 hours before it is on aniorb servers') //soon to be patched i hope, really annoying tbf
                       c.send(embed);
                   }
               }
@@ -120,6 +120,3 @@ fs.readdir("./commands/", (err, files) => {
   });
 }); // simple command handler MoRe ORgAnIzEd 👀-0
 client.login(client.config.token);
-//i feel like im getting assulted for not knowing what the hell im doing -Au
-//**holy fuck i deleted that shit but whatever, ill get this shit setup i hope -au*/
-
