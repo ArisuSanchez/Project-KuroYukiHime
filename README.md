@@ -29,7 +29,12 @@ Soon to have features such as anime release notifiers, and more commands for fun
  
  # For Client Side Installation
 
- ## Dependencies 
+
+ ## IMPORTANT
+using older version of djs the version that works is 12.5.3
+
+
+## Dependencies 
  - { Client , Collection , MessageEmbed } discord.js 
  - mal-scraper
  - rss-feed-emitter
@@ -46,4 +51,4 @@ literally label it something other then our project, please
 ```sh <br> 
 node index.js
 ``` 
-In powershell.
+In A terminal
